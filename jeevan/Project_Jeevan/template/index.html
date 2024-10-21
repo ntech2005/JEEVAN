@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEEVAN</title>
+    <link rel="icon" type="image/jpg" href="{% static 'images/Favicon.png' %}">
+     <!-- Font Awesome CDN for Social Media Icons -->
+     <script src="https://kit.fontawesome.com/079d4458a2.js" crossorigin="anonymous"></script>
+ 
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{%static 'js/script.js' %}"></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+       <div class="header-container">
+           <!-- Logo and Tagline -->
+           <a href="index.html" class="logo-container">
+               <div class="logo-text">
+                   <h1>JV</h1>
+                   <span>Tours & Travels</span>
+               </div>
+           </a>
+           
+           <!-- Navigation Bar -->
+           <nav class="navbar">
+               <ul>
+                   <li><a href="#Taxi">Find Taxi</a></li>
+                   <li><a href="#Tours">Tours & Packages</a></li>
+                   <li><a href="#Tour">Book Tour</a></li>
+                   <li><a href="#about-us">About Us</a></li>
+                   <li><a href="#services">Services</a></li>
+                   <li><a href="#blog">Blog</a></li>  
+                   <li><a href="#contact-us">Contact Us</a></li>
+             
+               </ul>
+           </nav>
+           
+           <!-- Follow Us Section with Social Media Icons -->
+           <div class="follow-us">
+               <center><span style="font-size:25px;font-weight:bold;color:#E65A2C;"
+               >Follow Us:</span></center><br>
+               <a href="#" target="_blank"><i class="fa-solid fa-phone fa-bounce" style="color: #ffffff; font-size: 25px;"></i></a>
+               <a href="#" target="_blank"><i class="fab fa-facebook-f fa-bounce" style="color: #ffffff; font-size: 25px;"></i></a>
+               <a href="#" target="_blank"><i class="fab fa-instagram fa-bounce" style="color: #ffffff; font-size: 25px;"></i></a>
+               <a href="#" target="_blank"><i class="fab fa-twitter fa-bounce" style="color: #ffffff; font-size: 25px;"></i></a>
+               <a href="#" target="_blank"><i class="fab fa-linkedin-in fa-bounce" style="color: #ffffff; font-size: 25px;"></i></a>
+           </div>
+       </div>
+   </header>
+    <!-- Main Content -->
+    <main>
+           <div class="slider">
+           <!-- Slide 1 -->
+           <div class="slide active">
+               <img src="https://media.istockphoto.com/id/1470035625/photo/driver-transporting-a-business-man-on-a-crowdsourced-taxi.jpg?s=612x612&w=0&k=20&c=HbVWN87JGim9g0CDhh2NHPM8oZ1g4qVGx86vxJ5RM24=" alt="Slide 1">
+               <div class="text">
+                   <h2>Welcome to JV Tours & Travels</h2>
+                   <p>Discover breathtaking destinations with us.</p>
+               </div>
+           </div>
+       
+           <!-- Slide 2 -->
+           <div class="slide">
+               <img src="https://www.patscabsbridport.co.uk/resources/images/con-a-right.jpg" alt="Slide 2">
+               <div class="text">
+                   <h2>Your Journey Awaits</h2>
+                   <p>Explore and enjoy the best tours tailored for you.</p>
+               </div>
+           </div>
+       
+           <!-- Slide 3 -->
+           <div class="slide">
+               <img src="https://athensviptaxi.net/wp-content/uploads/2020/01/Untitled-design-3-e1607804040306.png">
+               <div class="text">
+                   <h2>Unforgettable Moments</h2>
+                   <p>Experience the world like never before.</p>
+               </div>
+           </div>
+       
+           <!-- Navigation Buttons -->
+           <button class="prev">&#10094;</button>
+           <button class="next">&#10095;</button>
+       
+           <!-- Bullet Indicators -->
+           <div class="bullets">
+               <span class="dot active"></span>
+               <span class="dot"></span>
+               <span class="dot"></span>
+           </div>
+       </div>
+       <section class="section book">
+           <div class="form-container">
+               <h2 id="Taxi">Find a Taxi</h2>
+               <form id="taxi-form">
+                   <div class="form-columns">
+                       <div class="form-group">
+                           <label for="from">From:</label>
+                           <input type="text" id="from" name="from" placeholder="Enter pickup location" required>
+                       </div>
+                       
+                       <div class="form-group">
+                           <label for="to">To:</label>
+                           <input type="text" id="to" name="to" placeholder="Enter destination" required>
+                       </div>
+                   </div>
+           
+                   <div class="form-columns">
+                       <div class="form-group">
+                           <label for="departure">Departure Date:</label>
+                           <input type="date" id="departure" name="departure" required>
+                       </div>
+           
+                       <div class="form-group">
+                           <label for="phone">Phone Number:</label>
+                           <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                       </div>
+                   </div>
+           
+                   <div class="form-columns">
+                       <div class="form-group">
+                           <label>Trip Type:</label>
+                           <div class="radio-group">
+                               <label><input type="radio" name="trip-type" value="one-way" checked> One-way</label>
+                               <label><input type="radio" name="trip-type" value="two-way"> Two-way</label>
+                           </div>
+                       </div>
+           
+                       <div class="form-group">
+                           <label for="departure-time">Departure Time (AM/PM):</label>
+                           <div class="time-select">
+                               <select id="hours" name="hours">
+                                   <option value="12">12</option>
+                                   <option value="1">1</option>
+                                   <option value="2">2</option>
+                                   <option value="3">3</option>
+                                   <option value="4">4</option>
+                                   <option value="5">5</option>
+                                   <option value="6">6</option>
+                                   <option value="7">7</option>
+                                   <option value="8">8</option>
+                                   <option value="9">9</option>
+                                   <option value="10">10</option>
+                                   <option value="11">11</option>
+                               </select>
+           
+                               <select id="minutes" name="minutes">
+                                   <option value="00">00</option>
+                                   <option value="15">15</option>
+                                   <option value="30">30</option>
+                                   <option value="45">45</option>
+                               </select>
+           
+                               <select id="ampm" name="ampm">
+                                   <option value="AM">AM</option>
+                                   <option value="PM">PM</option>
+                               </select>
+                           </div>
+                       </div>
+                   </div><br>
+                   <button type="button" onclick="calculatePrice()" class="button">Find Taxi</button>
+               </form>
+           
+               <div class="price" id="price">Estimated Price: INR 0</div><br>
+       </section>
+   
+   
+       <!-- Tours & Packages Section -->
+       <section class="section tours-section">
+           <h2 id="Tours" >Tours & Packages</h2>
+           <!-- Breadcrumb Navigation -->
+   
+       <!-- Packages Section -->
+       <div class="packages">
+           <!-- Package 1 -->
+           <div class="package">
+               <img src="https://imgs.search.brave.com/bj4EJjp5FW7xJ7Xz_QZLVSUmKMcW8_aLr-iE8Kofkyw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxNC8x/Mi8xNi8yMi8yNS9z/dW5zZXQtNTcwODgx/XzY0MC5qcGc" alt="Beach Getaway">
+               <div class="package-info">
+                   <h3>Beach Getaway</h3>
+                   <p>Enjoy a relaxing time at the beautiful beaches.</p>
+                   <p><strong>Price: INR 12,000</strong></p>
+                   <button type="button" onclick="selectPackage('Beach Getaway', 12000)" class="button">Book Now</button>
+               </div>
+           </div>
+   
+           <!-- Package 2 -->
+           <div class="package">
+               <img src="https://imgs.search.brave.com/SRg06xF2AiLFmDzUTcxSX84GbbEFeP6z6Dp_r_sPgwE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTI1/Nzg1MTAzMC9waG90/by90cmFpbC1ydW5u/ZXJzLWFzY2VuZC1o/aWdoLW1vdW50YWlu/LXJpZGdlLmpwZz9z/PTYxMng2MTImdz0w/Jms9MjAmYz1GQU9H/U1UyZHpWTXQ4NG5B/QlEyeW13a3hFdXZl/eWgxREtWZ01xSHBZ/QmMwPQ" alt="Mountain Adventure">
+               <div class="package-info">
+                   <h3>Mountain Adventure</h3>
+                   <p>Experience thrilling hikes and breathtaking views.</p>
+                   <p><strong>Price: INR 15,000</strong></p>
+                   <button type="button" onclick="selectPackage('Mountain Adventure', 15000)" class="button">Book Now</button>
+               </div>
+           </div>
+   
+           <!-- Package 3 -->
+           <div class="package">
+               <img src="https://imgs.search.brave.com/tV01fM7xGOQ8AF0C9w7J2Q2WBSOlaemBq2W_Q3dO2w0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/d29uZGVycy1vZi10/aGUtd29ybGQubmV0/L1Rhai1NYWhhbC9p/bWFnZXMvVmlnbmV0/dGUuanBn" alt="City Tour">
+               <div class="package-info">
+                   <h3>City Tour</h3>
+                   <p>Explore the vibrant city life and culture.</p>
+                   <p><strong>Price: INR 8,000</strong></p>
+                   <button type="button" onclick="selectPackage('City Tour', 8000)" class="button">Book Now</button>
+               </div>
+           </div>
+   
+           <!-- Package 4 -->
+           <div class="package">
+               <img src="https://imgs.search.brave.com/85__lhnjVvVbTHpUA1ufVDtB8X9FkNgGe3y-OHzMLok/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNTQx/MDQzODY0L3Bob3Rv/L2NoZWV0YWgtcnVu/bmluZy1wYXN0LXNh/ZmFyaS12ZWhpY2xl/LmpwZz9zPTYxMng2/MTImdz0wJms9MjAm/Yz1HU2F1VmlvWEZG/SEFZY2FkX2VtVEhi/TmhybmxKRWY0ckRK/eUZyUS1nbWZRPQ" alt="Safari Adventure">
+               <div class="package-info">
+                   <h3>Safari Adventure</h3>
+                   <p>Embark on a wild journey through nature.</p>
+                   <p><strong>Price: INR 20,000</strong></p>
+                   <button type="button" onclick="selectPackage('Safari Adventure', 20000)" class="button">Book Now</button>
+               </div>
+           </div>
+       </div>
+       </section>
+       <!-- Booking Form Section -->
+   <section class="section booking-form-section">
+       <h2 id="Tour">Book Your Tour</h2>
+       <form id="tour-form">
+           <div class="form-group">
+               <label for="selected-package">Selected Package:</label>
+               <input type="text" id="selected-package" name="selected-package" placeholder="select package from above tour packages">
+           </div>
+   
+           <div class="form-group">
+               <label for="departure-date">Departure Date:</label>
+               <input type="date" id="departure-date" name="departure-date" required>
+           </div>
+   
+           <div class="form-group">
+               <label for="location">Starting Location:</label>
+               <input type="text" id="location" name="location" placeholder="Enter your starting location" required>
+           </div>
+   
+           <button type="button" onclick="calculateTourPrice()" class="button">Get Price Estimate</button>
+       </form>
+   
+       <div class="price" id="estimated-price">Estimated Price: INR 0</div>
+   </section>
+       <!-- About Us Section -->
+       <section class="section about-us-section">
+           <div class="container">
+               <h2 id="about-us">About Us</h2>
+               <p>Welcome to <strong>JV Tours & Travels</strong>, your trusted travel partner for remarkable and unforgettable experiences. We are a premier travel company committed to offering the best in customer service and customized travel packages.</p>
+       
+               <div class="about-content">
+                   <!-- History -->
+                   <div class="about-box">
+                       <h3>Our History</h3>
+                       <p>Founded in [Year], JV Tours & Travels has grown from a small operation into a global travel company. Our passion for travel and exploration inspired us to create tailored travel packages for adventurers, families, and businesses alike.</p>
+                   </div>
+       
+                   <!-- Mission -->
+                   <div class="about-box">
+                       <h3>Our Mission</h3>
+                       <p>At JV Tours & Travels, our mission is to provide exceptional travel services that inspire and connect people to the world’s most beautiful and unique destinations. We aim to make travel planning stress-free and enjoyable, while ensuring our clients experience the best journeys of their lives.</p>
+                   </div>
+       
+                   <!-- Vision -->
+                   <div class="about-box">
+                       <h3>Our Vision</h3>
+                       <p>We envision a world where travel is seamless, immersive, and accessible to all. Through our commitment to excellence and customer satisfaction, we strive to become a leader in the travel industry, recognized for our reliability, innovation, and passion for helping people explore the globe.</p>
+                   </div>
+       
+                   <!-- Services -->
+                   <div class="about-box">
+                       <h3>What We Offer</h3>
+                       <ul>
+                           <li>Custom Travel Packages</li>
+                           <li>Guided Tours to Top Destinations</li>
+                           <li>Luxury and Budget Accommodation</li>
+                           <li>24/7 Customer Support</li>
+                           <li>City and Intercity Taxi Services</li>
+                       </ul>
+                   </div>
+               </div>
+           </div>
+       </section>
+   
+       <!-- Services Section -->
+       <section class="section services-section">
+           <h2 id="services">Our Services</h2>
+           <div class="services-container">
+               <!-- Taxi Service -->
+               <div class="service-box">
+                   <i class="fa-solid fa-taxi" style="font-size:100px;"></i>
+                   <h3>Taxi Service</h3>
+                   <p>We offer reliable and comfortable taxi services for city and intercity travel. Book your ride now and enjoy your journey!</p>
+                   <a type="button" onclick="scrollToForm()" class="button" href="#Taxi">Book Now</a>            </div>
+       
+               <!-- Tour Service -->
+               <div class="service-box">
+                   <i class="fa-solid fa-location-dot"  style="font-size:100px;"></i>
+                   <h3>Tour Service</h3>
+                   <p>Explore amazing destinations with our tailored tour packages. From city tours to exotic getaways, we have it all.</p>
+                   <a type="button" onclick="scrollToForm()" class="button" href="#Tours">Book Now</a>            </div>
+           </div>
+       </section>
+   
+   
+   
+       <!-- Blog Section -->
+       <section class="section blog-section">
+           <h2 id="blog">Latest from Our Blog</h2>
+           <div class="blog-container">
+               <!-- Blog Post 1 -->
+               <div class="blog-card">
+                   <div class="blog-content">
+                       <h3>Why Choose Our Taxi Service?</h3>
+                       <p>Discover the comfort and convenience of our reliable taxi services, whether for daily commutes or long trips.</p>
+                       <a href="#">Read More</a>
+                   </div>
+               </div>
+       
+               <!-- Blog Post 2 -->
+               <div class="blog-card">
+                   <div class="blog-content">
+                       <h3>Top Destinations for 2024 Tours</h3>
+                       <p>Explore our exclusive tour packages for 2024 and visit the most beautiful destinations around the world.</p>
+                       <a href="#">Read More</a>
+                   </div>
+               </div>
+       
+               <!-- Blog Post 3 -->
+               <div class="blog-card">
+                   <div class="blog-content">
+                       <h3>Safety Tips When Taking a Taxi</h3>
+                       <p>Stay safe during your taxi ride by following these essential safety tips. Your well-being is our priority!</p>
+                       <a href="#">Read More</a>
+                   </div>
+               </div>
+       
+               <!-- Blog Post 4 -->
+               <div class="blog-card">
+                   <div class="blog-content">
+                       <h3>Create Your Custom Tour</h3>
+                       <p>Customize your tour experience with our personalized tour packages tailored to your preferences.</p>
+                       <a href="#">Read More</a>
+                   </div>
+               </div>
+       </section>
+   
+       <!-- Contact Us Section -->
+       <section class="section contact-section">
+           <div class="container">
+               <h2 id="contact-us">Contact Us</h2>
+               <p>We'd love to hear from you! Fill out the form below and we’ll get in touch with you as soon as possible.</p>
+       
+               <form id="contact-form" action="submit_form.php" method="POST">
+                   <!-- Full Name -->
+                   <div class="form-group">
+                       <label for="full-name">Full Name</label>
+                       <input type="text" id="full-name" name="full_name" placeholder="Your Full Name" required >
+                   </div>
+       
+                   <!-- Email -->
+                   <div class="form-group">
+                       <label for="email">Email</label>
+                       <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+                   </div>
+       
+                   <!-- Phone Number -->
+                   <div class="form-group">
+                       <label for="phone">Phone Number</label>
+                       <input type="tel" id="phone" name="phone" placeholder="Your Phone Number">
+                   </div>
+       
+                   <!-- Subject -->
+                   <div class="form-group">
+                       <label for="subject">Subject</label>
+                       <input type="text" id="subject" name="subject" placeholder="Subject">
+                   </div>
+       
+                   <!-- Message -->
+                   <div class="form-group">
+                       <label for="message">Message</label>
+                       <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
+                   </div>
+       
+                   <!-- Submit Button -->
+                   <div class="form-group">
+                       <button type="submit" class="submit-button">Submit</button>
+                   </div>
+               </form>
+           </div>
+           <p>Phone: +1 (123) 456-7890</p>
+           <p>Email: info@jvtours.com</p>
+           <p>Address: 123 Adventure Lane, Travel City, Country</p>
+       </section>
+   </main>
+   
+   <!-- Footer Section -->
+   <footer>
+       <div class="footer-container">
+           <div class="footer-box">
+               <h2>Explore</h2>
+               <ul>
+                   <li><a href="#">Home</a></li>
+                   <li><a href="#">About Us</a></li>
+                   <li><a href="#">Destinations</a></li>
+                   <li><a href="#">Tours & Packages</a></li>
+                   <li><a href="#">Blog</a></li>
+               </ul>
+           </div>
+   
+           <div class="footer-box">
+               <h2>Quick Links</h2>
+               <ul>
+                   <li><a href="#">Terms & Conditions</a></li>
+                   <li><a href="#">Privacy Policy</a></li>
+                   <li><a href="#">Support</a></li>
+               </ul>
+           </div>
+   
+           <div class="footer-box">
+               <h2>Contact Us</h2>
+               <p>Phone: +1 (123) 456-7890</p>
+               <p>Email: info@yourtravelwebsite.com</p>
+               <p>Address: 123 Adventure Road, Travel City, Country</p>
+           </div>
+   
+           <div class="footer-box">
+               <h2>Follow Us</h2>
+               <ul>
+                   <li><a href="#">Facebook</a></li>
+                   <li><a href="#">Instagram</a></li>
+                   <li><a href="#">Twitter</a></li>
+                   <li><a href="#">LinkedIn</a></li>
+               </ul>
+           </div>
+       </div>
+   
+       <div class="footer-bottom">
+           <p>Copyright © 2024 [Your Travel Company]. All rights reserved.</p>
+       </div>
+   </footer>
+   <script src="js/script.js"></script>
+   </body>
+   </html>
