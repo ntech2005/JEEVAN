@@ -111,41 +111,33 @@ async function calculatePrice() {
     document.getElementById("price").innerText = `Estimated Price: INR ${finalPrice.toFixed(2)}`;
 }
 
-let basePrice = 0;
+let basePrice = 0; // Ensure this is declared globally
 
 function selectPackage(packageName, price) {
+    // Set the selected package and base price
     document.getElementById('selected-package').value = packageName;
-    basePrice = price;
-    scrollToForm();
-}
-
-function scrollToForm() {
-    document.getElementById('booking-form').scrollIntoView({ behavior: 'smooth' });
-}
-
-async function getWeather(location) {
-    const apiKey = '33aa8aaec37f0edf30e1a43bd321ce65'; // Replace with your API key
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`;
-
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-        if (data.weather && data.weather.length > 0) {
-            return data.weather[0].main; // Returns weather condition (e.g., Rain)
-        }
-    } catch (error) {
-        console.error("Error fetching weather data:", error);
-    }
-    return null;
+    basePrice = price; // Update the basePrice globally
+    scrollToForm(); // Scroll to the form when a package is selected
 }
 
 async function calculateTourPrice() {
     const location = document.getElementById('location').value;
-    const weatherCondition = await getWeather(location);
+    
+    // Validate that the package has been selected
+    if (!basePrice) {
+        alert("Please select a package first!");
+        return;
+    }
 
-    // Base price multiplier
-    let weatherMultiplier = (weatherCondition === "Rain") ? 1.5 : 1; // 50% surcharge for rain
-    let finalPrice = basePrice * weatherMultiplier;
+    // Validate that the location is provided
+    if (!location) {
+        alert("Please enter your starting location.");
+        return;
+    }
 
+    // Base price without any weather or additional logic
+    let finalPrice = basePrice;
+
+    // Update the price on the page
     document.getElementById('estimated-price').innerText = `Estimated Price: INR ${finalPrice.toFixed(2)}`;
 }

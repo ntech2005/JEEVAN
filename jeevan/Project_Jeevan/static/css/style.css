@@ -110,6 +110,136 @@ main {
     text-align: center;
     margin-bottom: 20px;
 }
+/* Slider Container */
+.slider {
+    position: relative;
+    max-width: 100%;
+    height: 500px;
+    overflow: hidden;
+    margin: 81px auto;
+    
+}
+
+/* Individual Slide */
+.slide {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Active Slide */
+.slide.active {
+    display: block;
+}
+
+/* Text Animation with Transparent Background */
+.text {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 5px;
+    animation: textSlideIn 1s forwards; /* Animate text from top to center */
+}
+
+.text h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.text p {
+    font-size: 1.2em;
+}
+
+@keyframes textSlideIn {
+    from {
+        top: -100px;
+        opacity: 0;
+    }
+    to {
+        top: 50%;
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Previous and Next Buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Bullet Indicators */
+.bullets {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #FF6F3C;
+}
+
+/* Responsive Text for Smaller Devices */
+@media screen and (max-width: 768px) {
+    .text h2 {
+        font-size: 2em;
+    }
+
+    .text p {
+        font-size: 1em;
+    }
+
+    .prev, .next {
+        padding: 10px;
+    }
+    .slider{
+    margin:330px 0px 0px 0px;
+    }
+}
+
 .book{
     color: white; /* Text color */
     padding: 20px;
@@ -594,136 +724,7 @@ main {
         margin-bottom: 20px;
     }
 }
- /* Slider Container */
- .slider {
-    position: relative;
-    max-width: 100%;
-    height: 500px;
-    overflow: hidden;
-    margin: 81px auto;
-    
-}
-
-/* Individual Slide */
-.slide {
-    display: none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Active Slide */
-.slide.active {
-    display: block;
-}
-
-/* Text Animation with Transparent Background */
-.text {
-    position: absolute;
-    top: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    padding: 20px;
-    border-radius: 5px;
-    animation: textSlideIn 1s forwards; /* Animate text from top to center */
-}
-
-.text h2 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-}
-
-.text p {
-    font-size: 1.2em;
-}
-
-@keyframes textSlideIn {
-    from {
-        top: -100px;
-        opacity: 0;
-    }
-    to {
-        top: 50%;
-        opacity: 1;
-        transform: translate(-50%, -50%);
-    }
-}
-
-/* Previous and Next Buttons */
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    padding: 15px;
-    border-radius: 50%;
-    z-index: 10;
-}
-
-.prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
-}
-
-/* Bullet Indicators */
-.bullets {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-    text-align: center;
-}
-
-.dot {
-    height: 15px;
-    width: 15px;
-    margin: 0 5px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
-}
-
-.dot.active {
-    background-color: #FF6F3C;
-}
-
-/* Responsive Text for Smaller Devices */
-@media screen and (max-width: 768px) {
-    .text h2 {
-        font-size: 2em;
-    }
-
-    .text p {
-        font-size: 1em;
-    }
-
-    .prev, .next {
-        padding: 10px;
-    }
-    .slider{
-    margin:330px 0px 0px 0px;
-    }
-}
-
+ 
  /* Breadcrumbs */
  .breadcrumb {
     background-color: #e9ecef;
